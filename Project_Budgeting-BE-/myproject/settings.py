@@ -282,7 +282,7 @@ print("Using Cloudinary for media storage in production.")
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Project_Budgeting-FE/dist/assets"),  # FE assets folder
+    os.path.join(BASE_DIR, "Project_Budgeting-FE-/dist/assets"),  # FE assets folder
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # for production collectstatic
