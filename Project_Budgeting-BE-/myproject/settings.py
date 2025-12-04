@@ -68,14 +68,14 @@ CORS_ALLOWED_ORIGINS = [
 
    ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # Only allow specified origins
+CORS_ALLOW_ALL_ORIGINS = False  # Only allow specified origins
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:3000",
 #     "https://gate-check-lwnp.onrender.com",
 #     "https://s39c9z90-3000.inc1.devtunnels.ms",
 # ]
 
-CORS_ALLOW_CREDENTIALS = False
+# CORS_ALLOW_CREDENTIALS = False
 
 CORS_ALLOW_CREDENTIALS = True
 
