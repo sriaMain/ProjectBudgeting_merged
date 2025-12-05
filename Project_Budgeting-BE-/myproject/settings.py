@@ -64,7 +64,7 @@ CORS_ALLOWED_ORIGINS = [
     # "https://gate-check-lwnp.onrender.com" 
     "http://localhost:8000",
 #    "http://localhost:5173",
-    "https://project-budgeting-fe.onrender.com/",
+    "https://project-budgeting-fe.onrender.com",
 
    ]
 
@@ -117,7 +117,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "Project_Budgeting-FE/dist")],
+        'DIRS': [os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-/dist")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -282,7 +282,7 @@ print("Using Cloudinary for media storage in production.")
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Project_Budgeting-FE-/dist/assets"),  # FE assets folder
+    os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-/dist/assets"),  # FE assets folder
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # for production collectstatic
