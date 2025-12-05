@@ -438,6 +438,11 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-", "dist"),
 ]
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
