@@ -432,9 +432,13 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ============================
 STATIC_URL = "/static/"
 
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-/dist/assets"),
+# ]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-/dist/assets"),
+    os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-", "dist", "assets"),
 ]
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
