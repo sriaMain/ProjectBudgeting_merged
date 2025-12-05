@@ -33,52 +33,18 @@ SECRET_KEY = 'django-insecure-a6f*$eh4p!6=lh-+h#*)afw4*t^_5c*sp-is_7gq(=y!sxkyv_
 
 
 ALLOWED_HOSTS = ['*']
-# corsheaders = ['*'] 
-# corsheaders = ['*'] 
 
-
-
-# CORS_ALLOWED_ORIGINS = ['*']
-
-# =======
-CORS_ALLOW_ALL_ORIGINS = True
-
-CORS_ALLOW_HEADERS = [
-    "accept",
-    "accept-encoding",
-    "authorization",
-    "content-type",
-    "dnt",
-    "origin",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-]
-# >>>>>>> 8d8baa6 (roles code)
-
-
+# CORS Configuration
 CORS_ALLOWED_ORIGINS = [
-    # "http://localhost:55430",  # ✅ Correct (no trailing slash)
-
-    "http://localhost:5173",
-    # "https://gate-check-lwnp.onrender.com" 
-    "http://localhost:8000",
-#    "http://localhost:5173",
-    "https://project-budgeting-fe.onrender.com",
-
-   ]
-
-CORS_ALLOW_ALL_ORIGINS = False  # Only allow specified origins
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "https://gate-check-lwnp.onrender.com",
-#     "https://s39c9z90-3000.inc1.devtunnels.ms",
-# ]
-
-# CORS_ALLOW_CREDENTIALS = False
-
+    "http://localhost:5173",  # Local frontend dev server
+    "http://localhost:8000",  # Local backend
+    "https://project-budgeting-fe.onrender.com", # Old FE Render URL
+    "https://projectbudgeting-merged-1.onrender.com", # Your new combined Render URL
+]
 CORS_ALLOW_CREDENTIALS = True
 
+# Remove all other CORS_... settings like CORS_ALLOW_ALL_ORIGINS and CORS_ALLOW_HEADERS
+# as they are either conflicting or unnecessary with the setup above.
 
 # Application definition
 
