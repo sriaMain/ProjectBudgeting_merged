@@ -433,7 +433,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ============================
 # STATIC FILES + WHITENOISE
 # ============================
-STATIC_URL = "/static/"
+STATIC_URL = "/assets/"
 
 # React build folder (dist) must be included first
 STATICFILES_DIRS = [
@@ -441,7 +441,7 @@ STATICFILES_DIRS = [
 ]
 
 # Where collectstatic will copy all static files
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # WhiteNoise storage backend
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
