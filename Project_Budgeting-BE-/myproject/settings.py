@@ -433,7 +433,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ============================
 # STATIC FILES + WHITENOISE
 # ============================
-STATIC_URL = "/assets/"
+STATIC_URL = "/static/"
 
 # React build folder (dist) must be included first
 STATICFILES_DIRS = [
