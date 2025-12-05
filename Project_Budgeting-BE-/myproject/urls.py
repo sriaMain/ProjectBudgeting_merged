@@ -53,9 +53,9 @@ urlpatterns = [
     path('api/', include('client.urls')),
 ]
 
-# React SPA fallback route — must be last
+# React frontend fallback — EXCLUDES api, static, and assets
 urlpatterns += [
-    re_path(r'^(?!api/).*$', frontend),
+    re_path(r"^(?!api/|static/|assets/).*", frontend),
 ]
 
 if settings.DEBUG:
