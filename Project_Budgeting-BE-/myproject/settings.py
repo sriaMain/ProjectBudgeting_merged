@@ -451,3 +451,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+import os
+print("🟦 BASE_DIR:", BASE_DIR)
+print("🟩 BASE_DIR.parent:", BASE_DIR.parent)
+print("🟨 Files at BASE_DIR.parent:", os.listdir(BASE_DIR.parent))
+print("🟧 Files at /opt/render/project/src:", os.listdir("/opt/render/project/src"))
