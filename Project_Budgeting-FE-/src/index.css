@@ -17,3 +17,11 @@
   animation: slideInFromRight 0.3s ease-out;
 }
 
+// Filepath: d:\New folder (2)\Project_Budgeting-FE-\postcss.config.js
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
