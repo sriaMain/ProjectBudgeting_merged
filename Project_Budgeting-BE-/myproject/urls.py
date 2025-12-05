@@ -15,48 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include, re_path
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from .views import frontend
 from django.conf import settings
 from django.conf.urls.static import static
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('api/accounts/', include('accounts.urls')),
-#     path('api/', include('module.urls')),
-#     path('api/', include('product_group.urls')),
-#     path('api/roles/', include('roles.urls')),
-#     path('api/', include('client.urls')),
-#     path("", frontend),
-#     # for any route that is not an API route.
-#     # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
-# ]
-# # FRONTEND ROUTES (React SPA)
-# # Serve index.html for ALL non-API routes
-# urlpatterns += [
-#     re_path(r"^(?!api/).*", TemplateView.as_view(template_name="index.html")),
-# ]
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # API routes
+    # API routes should have unique paths
     path('api/accounts/', include('accounts.urls')),
-    path('api/', include('module.urls')),
-    path('api/', include('product_group.urls')),
+    path('api/module/', include('module.urls')),
+    path('api/product_group/', include('product_group.urls')),
     path('api/roles/', include('roles.urls')),
-    path('api/', include('client.urls')),
+    path('api/client/', include('client.urls')),
+
+    # React frontend fallback - This is the standard and correct way
+    # It serves your React app's index.html for any non-API URL.
+    re_path(r"^(?!api/).*", TemplateView.as_view(template_name="index.html")),
 ]
 
-# React frontend fallback — EXCLUDES api, static, and assets
-urlpatterns += [
-    re_path(r"^(?!api/|static/|assets/).*", frontend),
-]
-
+# This is only for local development, Render/WhiteNoise handles this in production
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
