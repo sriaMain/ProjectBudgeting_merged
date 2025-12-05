@@ -430,25 +430,27 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ============================
 # STATIC FILES + WHITENOISE
 # ============================
+# ============================
+# STATIC FILES + WHITENOISE
+# ============================
 STATIC_URL = "/static/"
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-/dist/assets"),
-# ]
+# React build folder (dist) must be included first
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR.parent, "Project_Budgeting-FE-", "dist"),
 ]
+
+# Where collectstatic will copy all static files
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# WhiteNoise storage backend
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Required for Django to find files in dist/
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
-
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 import os
