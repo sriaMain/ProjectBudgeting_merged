@@ -30,7 +30,12 @@ urlpatterns = [
     path('api/', include('client.urls')),
     path("", frontend),
     # for any route that is not an API route.
-    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+]
+# FRONTEND ROUTES (React SPA)
+# Serve index.html for ALL non-API routes
+urlpatterns += [
+    re_path(r"^(?!api/).*", TemplateView.as_view(template_name="index.html")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
